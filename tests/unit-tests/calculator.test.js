@@ -1,12 +1,11 @@
-const { add, subtract, multiply, divide, clearHistory, getHistory } = require("../src/calculator");
-const { test, beforeEach, expect } = require('@playwright/test');
+const { add, subtract, multiply, divide, clearHistory, getHistory } = require("../../src/calculator");
 
 const testCases = [
     { inputs: [2, 3], operation: 'add', expected: 5 },
     { inputs: [5, 3], operation: 'subtract', expected: 2 },
     { inputs: [4, 5], operation: 'multiply', expected: 20 },
     { inputs: [10, 2], operation: 'divide', expected: 5 },
-    { inputs: [10, 0], operation: 'divide', expected: 'error' }, // Erreur division par zéro
+    { inputs: [10, 0], operation: 'divide', expected: 'error' },
 ];
 
 testCases.forEach(({ inputs, operation, expected }) => {
