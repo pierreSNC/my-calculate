@@ -1,5 +1,34 @@
 const { add, subtract, multiply, divide, clearHistory, getHistory } = require("../src/calculator");
 
+const testCases = [
+    { inputs: [2, 3], operation: 'add', expected: 5 },
+    { inputs: [5, 3], operation: 'subtract', expected: 2 },
+    { inputs: [4, 5], operation: 'multiply', expected: 20 },
+    { inputs: [10, 2], operation: 'divide', expected: 5 },
+    { inputs: [10, 0], operation: 'divide', expected: 'error' }, // Erreur division par zéro
+];
+
+testCases.forEach(({ inputs, operation, expected }) => {
+    test(`operation ${operation} on ${inputs[0]} and ${inputs[1]} should return ${expected}`, () => {
+        let result;
+        switch (operation) {
+            case 'add':
+                result = add(inputs[0], inputs[1]);
+                break;
+            case 'subtract':
+                result = subtract(inputs[0], inputs[1]);
+                break;
+            case 'multiply':
+                result = multiply(inputs[0], inputs[1]);
+                break;
+            case 'divide':
+                result = inputs[1] === 0 ? 'error' : divide(inputs[0], inputs[1]);
+                break;
+        }
+        expect(result).toBe(expected);
+    });
+});
+
 beforeEach(() => {
     clearHistory();
 });
