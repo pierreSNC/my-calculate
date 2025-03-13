@@ -1,0 +1,21 @@
+.calculator {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.result {
+    font-size: 2em;
+    height: 80px;
+    text-align: right;
+    padding: 10px;
+}
+.btn-operation {
+    background-color: #f0f0f0;
+}
+.history-item:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+.history {
+    max-height: 200px;
+    overflow-y: auto;
+}

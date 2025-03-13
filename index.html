@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="calculator">
+        <div class="result" id="result">0</div>
+
+        <div class="btn-group d-flex flex-wrap">
+            <button class="btn btn-light btn-lg" onclick="appendDigit('1')">1</button>
+            <button class="btn btn-light btn-lg" onclick="appendDigit('2')">2</button>
+            <button class="btn btn-light btn-lg" onclick="appendDigit('3')">3</button>
+            <button id="add" class="btn btn-light btn-lg btn-operation" onclick="performOperation('+')">+</button>
+            <button class="btn btn-light btn-lg" onclick="appendDigit('4')">4</button>
+            <button class="btn btn-light btn-lg" onclick="appendDigit('5')">5</button>
+            <button class="btn btn-light btn-lg" onclick="appendDigit('6')">6</button>
+            <button id="subtract" class="btn btn-light btn-lg btn-operation" onclick="performOperation('-')">-</button>
+            <button class="btn btn-light btn-lg" onclick="appendDigit('7')">7</button>
+            <button class="btn btn-light btn-lg" onclick="appendDigit('8')">8</button>
+            <button class="btn btn-light btn-lg" onclick="appendDigit('9')">9</button>
+            <button id="multiply" class="btn btn-light btn-lg btn-operation" onclick="performOperation('*')">×</button>
+            <button class="btn btn-light btn-lg" onclick="appendDigit('0')">0</button>
+            <button id="divide" class="btn btn-light btn-lg btn-operation" onclick="performOperation('/')">÷</button>
+            <button id="clear" class="btn btn-light btn-lg" onclick="clearDisplay()">C</button>
+            <button id="backspace" class="btn btn-light btn-lg" onclick="backspace()">←</button>
+            <button id="equal" class="btn btn-success btn-lg" onclick="calculateResult()">=</button>
+        </div>
+
+        <div class="mt-3">
+            <h5>Historique</h5>
+            <ul class="list-group history" id="history-list">
+            </ul>
+            <button class="btn btn-danger btn-sm mt-3" onclick="clearHistory()">Clear History</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

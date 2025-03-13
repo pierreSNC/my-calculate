@@ -1,4 +1,5 @@
 const { add, subtract, multiply, divide, clearHistory, getHistory } = require("../src/calculator");
+const { test, beforeEach, expect } = require('@playwright/test');
 
 const testCases = [
     { inputs: [2, 3], operation: 'add', expected: 5 },
