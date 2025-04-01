@@ -36,15 +36,15 @@ test.describe('Calculator E2E Tests', () => {
         expect(history).toContain('4 * 5 = 20');
     });
 
-    // test('should clear history when Clear History button is clicked', async ({ page }) => {
-    //     await page.goto('file://' + __dirname + '/../../index.html');
-    //     await page.click('button:has-text("2")');
-    //     await page.click('#add');
-    //     await page.click('button:has-text("3")');
-    //     await page.click('#equal');
-    //
-    //     await page.click('#clear-history');
-    //     const history = await page.innerText('#history-list');
-    //     expect(history).toBe('');
-    // });
+    test('should clear history when Clear History button is clicked', async ({ page }) => {
+        await page.goto('file://' + __dirname + '/../../index.html');
+        await page.click('button:has-text("2")');
+        await page.click('#add');
+        await page.click('button:has-text("3")');
+        await page.click('#equal');
+
+        await page.click('#clear-history');
+        const history = await page.innerText('#history-list');
+        expect(history).toBe('');
+    });
 });
