@@ -3,14 +3,16 @@ const { test, expect } = require('@playwright/test');
 test.describe('Calculator E2E Tests', () => {
     test('should add two numbers and display result', async ({ page }) => {
         await page.goto('file://' + __dirname + '/../../index.html');
-        await page.click('#add');
+
         await page.click('button:has-text("2")');
+        await page.click('#add');
         await page.click('button:has-text("3")');
         await page.click('#equal');
 
         const history = await page.innerText('#history-list');
         expect(history).toContain('2 + 3 = 5');
     });
+
 
     test('should subtract two numbers and display result', async ({ page }) => {
         await page.goto('file://' + __dirname + '/../../index.html');
